@@ -1,0 +1,84 @@
+.home {
+  @extend %cover;
+  @extend %center;
+  background: $color-contessa;
+  color: $color-quarter-spanish-white;
+  text-align: center;
+  overflow: hidden;
+
+
+  &:before,
+  &:after {
+    content: '';
+    height: 24rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before {
+    background: linear-gradient(to bottom, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    top: 0;
+  }
+
+  &:after {
+    background: linear-gradient(to top, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    bottom: 0;
+  }
+}
+
+.home__wrapper {}
+
+.home__titles {
+  @extend %vertical__titles;
+}
+
+.home__titles__label {
+  @extend %vertical__titles__label;
+}
+
+.home__titles__title {
+  @extend %vertical__titles__title;
+}
+
+.home__gallery {
+  @extend %cover;
+
+  visibility: hidden;
+}
+
+.home__gallery__media {
+  position: absolute;
+}
+
+.home__gallery__media__image {}
+
+.home__link {
+  @extend %description-14;
+
+  letter-spacing: 0.05rem;
+  align-items: center;
+  bottom: 5rem;
+  left: 50%;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  height: 6rem;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  width: 28.8rem;
+  z-index: 2;
+
+  @include media('<phone') {
+    bottom: 7.5rem;
+    height: 13.7rem;
+    width: 55rem;
+  }
+}
+
+.home__link__icon {
+  @extend %cover;
+}
